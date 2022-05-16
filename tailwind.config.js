@@ -6,7 +6,11 @@ module.exports = {
   darkMode : 'class',
   mode : 'jit',
   theme: {
-    extend: {},
+    extend: {
+      fontFamily : {
+        'Space-Mono' : ['"Space Mono"' , 'monospace'],
+      }
+    },
   },
   plugins: [],
 }
