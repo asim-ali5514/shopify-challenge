@@ -8,36 +8,16 @@ import { json } from "stream/consumers";
 import React, { useState, useEffect } from "react";
 import { Response } from "../components/Response";
 const Home = () => {
-  const key = "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";
   const link = "https://api.openai.com/v1/engines/text-curie-001/completions";
 
   const configuration = new Configuration({
-    apiKey: "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",
+    apiKey: process.env.NEXT_PUBLIC_API_KEY,
   });
   const [prompt, setprompt] = useState("");
   const [answers, setanswers] = useState<
     { question: string; answer: string }[]
   >([]);
-  // useEffect(() => {
-  //   async function fetchData() {
-  //     try {
-  //       const response = await openai.createCompletion("text-curie-001", {
-  //         prompt: "Say this is a test",
-  //         max_tokens: 5,
-  //         temperature: 1,
-  //         top_p: 1,
-  //         n: 1,
-  //         stream: false,
-  //         logprobs: null,
-  //         stop: "\n",
-  //       });
-  //       console.log(response);
-  //     } catch (err) {
-  //       console.log(err);
-  //     }
-  //     fetchData();
-  //   }
-  // }, []);
+
   const openai = new OpenAIApi(configuration);
 
   return (
