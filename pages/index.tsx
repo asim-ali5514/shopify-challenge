@@ -87,7 +87,7 @@ const Home = () => {
 
         <div className="flex flex-col pb-20 gap-5 pt-5 justify-center items-center dark:bg-slate-800 bg-slate-300  ">
           {answers.map(({ answer, question }) => (
-            <Response answer={answer} question={question}></Response>
+            <Response key={1} answer={answer} question={question}></Response>
           ))}
         </div>
       </div>
